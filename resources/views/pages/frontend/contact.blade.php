@@ -122,7 +122,7 @@
                 </div>
             </div>        
 
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <h5 class="contact-title">Tamilnadu</h5>
                 <div class="contact-text">
                     <p>
@@ -141,6 +141,34 @@
                         <span class="c-text" style="margin-left: 27px;">Thimmaraya Street Krishnagiri,</span><br>
                         <span class="c-text" style="margin-left: 27px;">PIN -635001</span><br>
                         <span class="c-text" style="margin-left: 27px;">TAMIL NADU, India</span>
+                    </p>
+                </div>
+            </div> -->
+
+            <div class="col-md-3">
+                <h5 class="contact-title">Tamilnadu</h5>
+                <div class="contact-text">
+                    <p>
+                        <span class="c-icon"><i class="zmdi zmdi-phone"></i></span><span class="c-text">+91-9791715555</span>
+                    </p>
+                    
+
+                    <p>
+                        <span class="c-icon"><i class="zmdi zmdi-email"></i></span>
+                        <span class="c-text" style="font-size: 13px;">khan@talentzconnect.com</span>
+                    </p>
+
+                    <p>
+                        <span class="c-icon"><i class="zmdi zmdi-caret-right"></i></span>
+                        <span class="c-text">Mr.Shanawaz Khan</span>
+                    </p>
+                    
+                    <p>
+                        <span class="c-icon"><i class="zmdi zmdi-pin"></i></span>
+                        <span class="c-text">"SHAMA VILLA" No. 125, C-1, </span><br>
+                        <span class="c-text" style="margin-left: 27px;">SRP colony   8th Street Extn,</span><br>
+                        <span class="c-text" style="margin-left: 27px;">Peravallur, Next to Kolathur Grace Matric School</span><br>
+                        <span class="c-text" style="margin-left: 27px;">Chennai – 600082. Tamilnadu, India.</span>
                     </p>
                 </div>
             </div>
