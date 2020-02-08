@@ -15,8 +15,16 @@ class CreateCollegesTable extends Migration
     {
         Schema::create('colleges', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 191);
-            $table->string('area', 50);
+            $table->string('name', 191); 
+            $table->string('area', 50)->nullable();           
+            $table->text('about')->nullable();
+            $table->longText('addmission_info')->nullable();
+            $table->decimal('total_students', 5,0)->nullable();
+            $table->text('full_address')->nullable();
+            $table->text('short_description')->nullable();
+            $table->longText('description')->nullable();  
+            $table->boolean('dispaly_at_home')->default(false);         
+            $table->boolean('status')->default(true);         
             $table->timestamps();
         });
     }
