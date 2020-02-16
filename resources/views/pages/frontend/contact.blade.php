@@ -30,7 +30,7 @@
                 <h4 class="contact-title text-center" style="font-size: 30px">Contact</h4>
                 <hr>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-3">
                 <h5 class="contact-title">Bangladesh</h5>
                 <div class="contact-text">
                     <p><span class="c-icon"><i class="zmdi zmdi-phone"></i></span><span class="c-text">{{ config('plc.mobile') }}</span></p>
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <h5 class="contact-title">Nepal</h5>
                 <div class="contact-text">
                     <p>
@@ -61,7 +61,7 @@
                         <span class="c-text" style="margin-left: 27px;">Kathmandu, Nepal.</span><br>
                     </p>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-md-4">
                 <h5 class="contact-title">Singapore</h5>

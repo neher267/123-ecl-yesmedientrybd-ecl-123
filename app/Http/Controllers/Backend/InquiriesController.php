@@ -11,7 +11,8 @@ class InquiriesController extends Controller
     {
         // 0=unread; 1= primary selected; 2=selected; 3=rejected; 4=admited; 5=softdelete;
         $page_title = "Inquiryes";
-        $inquiryes = Inquiry::where('status', 0)->latest()->get();
+        // $inquiryes = Inquiry::where('status', 0)->latest()->get();
+        $inquiryes = Inquiry::where('status', 0)->where('id', '>', 1020)->latest()->get();
         $action=0;
         return view('pages.backend.inquiry.index', compact('inquiryes', 'page_title', 'action'));
     }  

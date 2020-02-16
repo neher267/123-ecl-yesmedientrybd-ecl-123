@@ -15,19 +15,21 @@
                     <li><a href="{{url('dashboard')}}"><i class="fa fa-home"></i>Home</a></li>   
                                      
                     @if(Auth::user()->role == 1)
-                    <!-- <li><a><i class="fa fa-cogs"></i> Settings <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-cogs"></i> Settings <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
 
-                            <li><a href="{{route('brands.index')}}">Brands</a></li>
+                            <li><a href="{{route('college.index')}}">College</a></li>
+
+                            <!-- <li><a href="{{route('brands.index')}}">Brands</a></li>
                             <li><a href="{{route('images.index')}}">Images</a></li>
                             <li><a href="{{route('pages.index')}}">Pages</a></li>
                             <li><a href="{{route('products.index')}}">Products</a></li>                            
                             <li><a href="{{route('services.index')}}">Services</a></li>
                             <li><a href="{{route('project-types.index')}}">Successful Case</a></li>                            
-                            <li><a href="{{route('users')}}">Users</a></li>  
+                            <li><a href="{{route('users')}}">Users</a></li>  --> 
                                         
                         </ul>
-                    </li> --> 
+                    </li> 
 
                     <!-- <li><a><i class="fa fa-angellist"></i> Students <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

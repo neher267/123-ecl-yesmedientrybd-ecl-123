@@ -114,4 +114,8 @@ Route::group(['prefix'=>'dashboard', 'namespace'=>'Backend', 'middleware'=>['aut
 	Route::DELETE('inquries/{inquiry}', 'InquiriesController@destroy')->name('inquries.destroy');
 
 	Route::get('product-inquiryes', 'InquiryController@productInquries');
+
+
+	// Feb-16-2020
+	Route::resource('college','CollegesController');
 });
