@@ -32,9 +32,9 @@ class CollegeStoreRequest extends FormRequest
             'full_address' => 'nullable|string|min:20',
             'short_description' => 'nullable|string|min:50',
             'description' => 'nullable|string|min:50',            
-            'dispaly_order' => 'nullable|numeric',
+            'display_order' => 'nullable|numeric',
             'total_students' => 'nullable|numeric',
-            'dispaly_at_home' => 'required|boolean',
+            'display_at_home' => 'required|boolean',
         ];
     }
 }

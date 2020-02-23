@@ -54,10 +54,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="total_students">Total Students<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="total_students">Total Students
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
-                            <input value="{{ old('total_students') }}"  type="text" id="total_students" name="total_students" required="required" class="form-control col-md-7 col-xs-12">
+                            <input value="{{ old('total_students') }}"  type="text" id="total_students" name="total_students" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="total_foreign_students">Total Foregn Students
+                        </label>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <input value="{{ old('total_foreign_students') }}"  type="text" id="total_foreign_students" name="total_foreign_students" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
 
@@ -103,10 +111,10 @@
 
                    
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dispaly_at_home">Dispaly At Home <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="display_at_home">Display At Home <span class="required">*</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
-                            <select id="dispaly_at_home" name="dispaly_at_home" required="required" class="form-control col-md-7 col-xs-12">
+                            <select id="display_at_home" name="display_at_home" required="required" class="form-control col-md-7 col-xs-12">
                                 <option value="">Select</option>
                                 <option value="1">Yes</option>
                                 <option value="0" selected>No</option>

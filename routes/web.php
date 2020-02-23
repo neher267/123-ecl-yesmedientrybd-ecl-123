@@ -118,4 +118,5 @@ Route::group(['prefix'=>'dashboard', 'namespace'=>'Backend', 'middleware'=>['aut
 
 	// Feb-16-2020
 	Route::resource('college','CollegesController');
+	Route::resource('colleges/{college}/images','CollegeImagesController');
 });

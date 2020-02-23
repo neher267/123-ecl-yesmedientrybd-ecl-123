@@ -22,12 +22,12 @@ class CreateCollegesTable extends Migration
             $table->text('about')->nullable();
             $table->longText('addmission_info')->nullable();
             $table->decimal('total_students', 5,0)->nullable();
-            $table->decimal('total_roreign_students', 5,0)->nullable();
+            $table->decimal('total_foreign_students', 5,0)->nullable();
             $table->text('full_address')->nullable();
             $table->text('short_description')->nullable();
             $table->longText('description')->nullable();  
-            $table->decimal('dispaly_order', 5,0)->default(0);          
-            $table->boolean('dispaly_at_home')->default(false);         
+            $table->decimal('display_order', 5,0)->default(0);          
+            $table->boolean('display_at_home')->default(false);         
             $table->boolean('status')->default(true);         
             $table->timestamps();
         });

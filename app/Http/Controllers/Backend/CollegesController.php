@@ -9,6 +9,8 @@ use App\Image;
 use App\Http\Requests\CollegeStoreRequest;
 use App\Http\Requests\CollegeUpdateRequest;
 
+use Intervention\Image\ImageManager;
+
 class CollegesController extends Controller
 {
     use RrsourceDelete;
@@ -23,10 +25,41 @@ class CollegesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {             
+    {     
+        // $manager = new ImageManager(array('driver' => 'imagick'));
+
+        
+
+        // open an image file
+        // $img = \Image::make('public/test.jpg');
+
+        // $img->fit(200);
+        // $img->brightness(35);
+        // $img->line(10, 100, 100, 100, function ($draw) {
+        //     $draw->color('#0000ff');
+        // });
+
+        // $img->invert();
+
+//         $img = \Image::canvas(800, 600, '#f5f5f5');
+//         $img->ellipse(150, 200, 300, 200, function ($draw) {
+//     $draw->border(5, '#f00');
+// });
+
+        // resize image instance
+        // $img->resize(400, 400);
+
+        // insert a watermark
+        // $img->insert('public/transparent.gif');
+
+        // save image in desired format
+        // $img->save('public/15.jpg');
+
+        // dd("ok");
+
         $page_title = "Colleges";
         $name = $this->route_name;
-        $results = College::orderBy('name', 'asc')->where('status', 1)->get();
+        $results = College::orderBy('name', 'asc')->get();
         return view($this->path.'index', compact('name', 'page_title', 'results'));
     }
 
@@ -50,25 +83,23 @@ class CollegesController extends Controller
      */
     public function store(CollegeStoreRequest $request)
     {
-        $data = new College;
 
+        // dd($request->all());
+        $data = new College;      
+
+		$data->name = trim($request->name);
+        $data->slug = strtolower(str_replace(' ', '-', $data->name));
         
-
-		$data->name = $request->name;
-        $data->slug = strtolower(str_replace(' ', '-', $request->name));
-        $data->slug = strtolower(str_replace('/', '-', $data->slug));
-        $data->category_id = $request->category_id;
-        $data->title = $request->title;
-        $data->hands_on = (bool)$request->hands_on;
-        $data->summary = $request->summary;
+        $data->area = $request->area; 
+        $data->meta_keyworks = $request->meta_keyworks;
         $data->about = $request->about;
-        $data->learning = $request->learning;
-        $data->enroll = $request->enroll;
-        $data->job_opp = $request->job_opp;
-        $data->duration = $request->duration;
-        $data->fee = $request->fee;
-        $data->thumnail = $this->image_path.'/'.$imageName1;
-        $data->background = $this->image_path.'/'.$imageName2;
+        $data->addmission_info = $request->addmission_info;
+        $data->total_students = $request->total_students;
+        $data->total_foreign_students = $request->total_foreign_students;
+        $data->full_address = $request->full_address;
+        $data->short_description = $request->short_description;
+        $data->description = $request->description;
+        $data->display_at_home = $request->display_at_home;
         
         $data->save();        
         return back()->withSuccess("Success!");
@@ -109,45 +140,29 @@ class CollegesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, College $college)
+    public function update(CollegeUpdateRequest $request, College $college)
     {
         $data = $college;
-        $data->name = $request->name;
-        $data->order = $request->order;
-        $data->status = $request->status;
-        $data->category_id = $request->category_id;
-        $data->title = $request->title;
-        $data->hands_on = (bool)$request->hands_on;
-        $data->summary = $request->summary;
-        $data->about = $request->about;
-        $data->learning = $request->learning;
-        $data->enroll = $request->enroll;
-        $data->job_opp = $request->job_opp;
-        $data->duration = $request->duration;
-        $data->fee = $request->fee;
         
-        if(!empty($request->thumnail)){
-            $request->validate(['thumnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']); 
-            $this->delete($college->thumnail);     
-            $imageName = time().'thumnail.'.$request->thumnail->getClientOriginalExtension();
-            $request->thumnail->move(public_path($this->image_path), $imageName);
-            $data->thumnail = $this->image_path.'/'.$imageName;       
-        }if(!empty($request->background)){
-            $request->validate(['background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']); 
-            $this->delete($college->background);            
-            $imageName = time().'background.'.$request->background->getClientOriginalExtension();
-            $request->background->move(public_path($this->image_path), $imageName);
-            $data->background = $this->image_path.'/'.$imageName;       
-        }if(!empty($request->referance)){
-            $request->validate(['referance' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']);   
-            $this->delete($college->referance);
-            $imageName = time().'referance.'.$request->referance->getClientOriginalExtension();
-            $request->referance->move(public_path($this->image_path), $imageName);
-            $data->referance = $this->image_path.'/'.$imageName;       
-        }
+        $data->name = trim($request->name);
+        $data->slug = strtolower(str_replace(' ', '-', $data->name));
+        
+        $data->area = $request->area; 
+        $data->meta_keyworks = $request->meta_keyworks;
+        $data->about = $request->about;
+        $data->addmission_info = $request->addmission_info;
+        $data->total_students = $request->total_students;
+        $data->total_foreign_students = $request->total_foreign_students;
+        $data->full_address = $request->full_address;
+        $data->short_description = $request->short_description;
+        $data->description = $request->description;
+        $data->display_at_home = $request->display_at_home;
+        $data->display_order = $request->display_order;
+        $data->status = $request->status;
+
         $data->save();
 
-        return redirect('dashboard/Colleges')->withSuccess("Update Success!");
+        return redirect('dashboard/college')->withSuccess("Update Success!");
     }
 
     /**
@@ -158,7 +173,6 @@ class CollegesController extends Controller
      */
     public function destroy(College $college)
     {
-        $this->delete($college->thumnail, $college->background, $college->referance);
         $college->delete();
         return back()->withSuccess("Success!");
     }

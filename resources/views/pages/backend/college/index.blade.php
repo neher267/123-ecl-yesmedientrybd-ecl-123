@@ -18,10 +18,10 @@
                     <thead>
                         <tr>
                             <th>Sr.No</th>
-                            <th>Image</th>
                             <th>Name</th>
-                            <th>Dispaly At Home</th>
+                            <th>Display At Home</th>                            
                             <th>Status</th>
+                            <th>Display Order (Asc)</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -30,30 +30,31 @@
                     	<?php $i=0 ?>
                     	@foreach($results as $result)
                         <tr>
-                            <td>{{++$i}}</td>
-                            <td>
-                                <!-- <img src="{{asset($result->image)}}" style="height: 70px; width: 100px; box-shadow: 2px 4px 5px darkgrey; margin: 3px;"> -->
-                            </td>
+                            <td>{{++$i}}</td>                            
                             <td>{{$result->name}}</td>  
                             <td>
-                                @if($result->dispaly_at_home)
-                                <span class="btn-success" style="border-radius: 5px; padding: 4px 8px">Yes</span>
+                                @if($result->display_at_home)
+                                <span class="label label-success">Yes</span>
                                 @else
-                                <span class="btn-danger" style="border-radius: 5px; padding: 4px 8px">No</span>
+                                <span class="label label-danger">No</span>
                                 @endif
-                            </td> 
+                            </td>
+                            
                             <td>
                                 @if($result->status)
-                                <span class="btn-success" style="border-radius: 5px; padding: 4px 8px">Active</span>
+                                <span class="label label-success">Active</span>
                                 @else
-                                <span class="btn-danger" style="border-radius: 5px; padding: 4px 8px">Diactive</span>
+                                <span class="label label-danger">Diactive</span>
                                 @endif
-                            </td>    
-                            <td>{{$result->order}}</td>                         
-                            <td>
-                            	<!-- <a href="{{route('product.details', $result)}}" class="btn btn-primary btn-xs" target="_blank"><i class="fa fa-folder"></i> View </a> -->
+                            </td>  
 
+                            <td>{{$result->display_order}}</td>  
+                                                    
+                            <td>                            	
                             	<a href="{{route($name.'.edit', $result)}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+
+                                <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Images </a>
+
 
                                 @if(Auth::user()->role == 1)
                                 <form action="{{route($name.'.destroy', $result)}}" method="POST" style="display: inline;">
