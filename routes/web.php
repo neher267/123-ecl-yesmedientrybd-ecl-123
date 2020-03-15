@@ -19,6 +19,8 @@
 Route::group(['namespace' => 'Frontend'], function() {
 	Route::get('/', 'HomeController@index');
 	Route::get('about', 'HomeController@about');
+	Route::get('franchise', 'HomeController@franchise');
+	
 	Route::get('privacy-policy', 'HomeController@privacyPolicy');
 	Route::get('why-choose-us', 'HomeController@why_choose_us');
 	Route::get('what-we-do', 'HomeController@what_we_do');

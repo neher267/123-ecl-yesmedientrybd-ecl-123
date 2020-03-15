@@ -176,7 +176,7 @@
                 </header>
                 <!--End of Header Area-->
 
-                @if(!Request::is('/') && !Request::is('thank-you'))
+                @if(!Request::is('/') && !Request::is('thank-you') && !Request::is('franchise'))
                     @include('layouts.frontend.partials._breadcrumb')
                 @endif
 

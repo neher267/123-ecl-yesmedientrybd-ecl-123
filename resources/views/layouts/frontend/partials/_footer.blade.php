@@ -13,8 +13,8 @@
                     </p>
                     <div class="social-icons">
                         <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                        <a href="#"><i class="zmdi zmdi-rss"></i></a>
-                        <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                        <!-- <a href="#"><i class="zmdi zmdi-rss"></i></a>
+                        <a href="#"><i class="zmdi zmdi-instagram"></i></a> -->
                     </div>
                 </div>
             </div>

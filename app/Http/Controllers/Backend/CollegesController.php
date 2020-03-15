@@ -41,10 +41,10 @@ class CollegesController extends Controller
 
         // $img->invert();
 
-//         $img = \Image::canvas(800, 600, '#f5f5f5');
-//         $img->ellipse(150, 200, 300, 200, function ($draw) {
-//     $draw->border(5, '#f00');
-// });
+        //         $img = \Image::canvas(800, 600, '#f5f5f5');
+        //         $img->ellipse(150, 200, 300, 200, function ($draw) {
+        //     $draw->border(5, '#f00');
+        // });
 
         // resize image instance
         // $img->resize(400, 400);

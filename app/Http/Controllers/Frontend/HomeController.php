@@ -53,6 +53,14 @@ class HomeController extends Controller
         return view($this->viewPath.'what-we-do', compact('title'));
     }
 
+    public function franchise()
+    {
+        $title = "Tranchise";
+        return view($this->viewPath.'franchise', compact('title'));
+    }
+
+    
+
     public function privacyPolicy()
     {
         $title = "Privacy Policy";
