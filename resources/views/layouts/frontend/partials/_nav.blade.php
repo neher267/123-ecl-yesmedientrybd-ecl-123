@@ -15,7 +15,7 @@
                                 <li><a href="{{ url('about') }}">About Us</a></li>
                                 <li><a href="{{ url('mbbs-in-bd') }}">MBBS in Bangladesh</a></li>
                                 <li><a href="{{ url('courses') }}">Colleges We Represent</a></li>
-                                <li><a href="{{ url('franchise') }}">Franchise</a></li>
+                                <!-- <li><a href="{{ url('franchise') }}">Franchise</a></li> -->
                                 <!-- <li><a href="{{ url('news') }}">News</a></li> -->
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
                             </ul>
@@ -55,7 +55,7 @@
                             <li><a href="{{ url('about') }}">About Us</a></li>
                             <li><a href="{{ url('mbbs-in-bd') }}">MBBS in Bangladesh</a></li>
                             <li><a href="{{ url('courses') }}">Colleges We Represent</a></li>
-                            <li><a href="{{ url('franchise') }}">Franchise</a></li>
+                            <!-- <li><a href="{{ url('franchise') }}">Franchise</a></li> -->
                             <li><a href="{{ url('contact') }}">Contact</a></li>
                         </ul>
                     </nav>

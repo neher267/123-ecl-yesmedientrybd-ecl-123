@@ -1,14 +1,12 @@
 @extends('layouts.frontend.app')
 
 @section('content')
-<link rel="stylesheet" href="https://www.caddcentre.com/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.caddcentre.com/css/style.css?v3">
-<script src="https://www.caddcentre.com/js/jquery.min.js"></script>
-<script src="https://www.caddcentre.com/js/bootstrap.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{asset('public/frontend/css/franchise.css')}}">
 
 <style type="text/css">
     .carousel-item img {
-        max-height: 341px;
+        max-height: 398px;
     }
     .franchsie-banner {
          height: auto; 
@@ -21,6 +19,14 @@
         background-color: #2d5930 
     }
     .p-r-0{padding-right: 0}
+
+    /*.franchise-carousel-caption {
+        background-color: #ddd;
+    }*/
+
+    .franchise-carousel-caption > h1 {
+        color: #2d5930 !important;
+    }
 
 
 </style>
@@ -70,14 +76,11 @@
                 <div class="bg-green px-2 pt-2 pb-2 fra_form">
 
                     <h3 class="text-white font-weight-light h5 py-2">Leading Source of Franchise Opportunities</h3>
-                    <form method="POST" name="register" action="enquiry-action.php" id="register">
-                        <input type="hidden" value="franchise-business-opportunities.php" name="page">
-                        <input type="hidden" name="adpage" value="Website">
-                        <input type="hidden" id="region" name="region" value="">
-                        <input type="hidden" id="source" name="source" value="2">
-                        <input type="hidden" id="campaign" name="campaign" value="Website">
-                        <input type="hidden" id="brand" name="brand" value="2">
-                        <input type="hidden" id="spage" name="spage" value="Main">
+                    <div class="col-md-12">
+                        @include('common.errors')
+                    </div>
+                    <form method="POST" action="{{url('franchise')}}">  
+                    {{ csrf_field() }}                     
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" name="name" placeholder="Name">
@@ -105,44 +108,40 @@
                             <span class="form-errors phone"></span>
                         </div>
 
-                        <input type="hidden" value="99" name="country">
                         <div class="row">
                             <div class="form-group col-md-6">
 
                                 <select name="state" id="fra_state" class="form-control">
                                     <option value="">State</option>
 
-                                    <option value="5">Andhra Pradesh</option>
-                                    <option value="14">Assam</option>
-                                    <option value="3">Bihar</option>
-                                    <option value="17">Chhattisgarh</option>
-                                    <option value="18">Delhi</option>
-                                    <option value="10">Gujarat</option>
-                                    <option value="16">Haryana</option>
-                                    <option value="21">Himachal Pradesh</option>
-                                    <option value="19">Jammu And Kashmir</option>
-                                    <option value="13">Jharkhand</option>
-                                    <option value="9">Karnataka</option>
-                                    <option value="12">Kerala</option>
-                                    <option value="7">Madhya Pradesh</option>
-                                    <option value="2">Maharashtra</option>
-                                    <option value="11">Orissa</option>
-                                    <option value="15">Punjab</option>
-                                    <option value="8">Rajasthan</option>
-                                    <option value="6">Tamil Nadu</option>
-                                    <option value="38">Telangana</option>
-                                    <option value="1">Uttar Pradesh</option>
-                                    <option value="20">Uttarakhand</option>
-                                    <option value="4">West Bengal</option>
-
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu And Kashmir">Jammu And Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Orissa">Orissa</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
                                 </select>
                                 <span class="form-errors state"></span>
 
                             </div>
                             <div class="form-group col-md-6">
-                                <select name="location" id="prepare_loc" class="form-control">
-                                    <option value="">Please select</option>
-                                </select>
+                                <input type="text" class="form-control" name="location" placeholder="Location">
                                 <span class="form-errors location"></span>
                             </div>
                         </div>
@@ -171,25 +170,11 @@
                                 <span class="form-errors prefertostart"></span>
                             </div>
                         </div>
-                    </form>
 
-                    <script>
-                        $(document).ready(function(e) {
-                            $("#fra_state").change(function() {
-                                var id = $(this).val();
-                                var state = 'state=' + id;
-                                $.ajax({
-                                    type: "POST",
-                                    url: "dynamic_centre.php",
-                                    data: state,
-                                    cache: false,
-                                    success: function(re) {
-                                        $("#prepare_loc").html(re);
-                                    }
-                                });
-                            });
-                        });
-                    </script>
+                        <div class="form-group">
+                            <input type="submit" class="form-control" value="Submit" style="background-color: #e21c23; color: #fff; padding-bottom: 30px; width: 50%; margin: auto;">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

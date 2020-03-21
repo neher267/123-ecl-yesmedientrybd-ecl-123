@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 	Route::get('/', 'HomeController@index');
 	Route::get('about', 'HomeController@about');
 	Route::get('franchise', 'HomeController@franchise');
+	Route::post('franchise', 'FranchiseController@store');
 	
 	Route::get('privacy-policy', 'HomeController@privacyPolicy');
 	Route::get('why-choose-us', 'HomeController@why_choose_us');
@@ -116,6 +117,12 @@ Route::group(['prefix'=>'dashboard', 'namespace'=>'Backend', 'middleware'=>['aut
 	Route::DELETE('inquries/{inquiry}', 'InquiriesController@destroy')->name('inquries.destroy');
 
 	Route::get('product-inquiryes', 'InquiryController@productInquries');
+
+	Route::get('franchise', 'FranchiseController@index')->name('franchise.index');
+	Route::get('franchise/{franchise}', 'FranchiseController@show')->name('franchise.show');
+	Route::post('franchise/{franchise}/change-status', 'FranchiseController@change_status')->name('franchise.change.status');
+	Route::post('franchise/filter', 'FranchiseController@filter')->name('franchise.filter');
+	Route::DELETE('franchise/{franchise}', 'FranchiseController@destroy')->name('franchise.destroy');
 
 
 	// Feb-16-2020

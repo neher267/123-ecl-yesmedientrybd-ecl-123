@@ -21,7 +21,6 @@
                             <li><a href="{{route('college.index')}}">College</a></li>
 
                             <!-- <li><a href="{{route('brands.index')}}">Brands</a></li>
-                            <li><a href="{{route('images.index')}}">Images</a></li>
                             <li><a href="{{route('pages.index')}}">Pages</a></li>
                             <li><a href="{{route('products.index')}}">Products</a></li>                            
                             <li><a href="{{route('services.index')}}">Services</a></li>
@@ -39,6 +38,7 @@
                     </li> -->
 
                     <li><a href="{{route('inquries.index')}}"><i class="fa fa-angellist"></i> Inquiries</a></li>
+                    <li><a href="{{route('franchise.index')}}"><i class="fa fa-angellist"></i> Franchise</a></li>
                     <!-- <li><a href="{{url('dashboard/product-inquiryes')}}"><i class="fa fa-angellist"></i> Product Inqueryes</a></li>  -->
                     <!-- <li><a href="{{route('manage-orders.index')}}"><i class="fa fa-angellist"></i> Orders</a></li>  -->
                     @endif   
