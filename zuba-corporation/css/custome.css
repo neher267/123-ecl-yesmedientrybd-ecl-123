@@ -1,0 +1,22 @@
+body{
+	background-image: url('http://zubacorporation.com/images/background.jpg');
+	background-repeat: repeat;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #224090;
+}
+
+.f-color{
+	padding: 10px 20px; 
+	background-color: #ddd; 
+	color: #000;
+}
+
+.left{
+	margin: 2px 0px;
+}
+
+.right{
+	margin: 2px 0px;
+}
